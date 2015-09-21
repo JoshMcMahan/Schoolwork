@@ -29,9 +29,13 @@ double baIN3 = payment * (1 - pow(1 + monintrate, month3 - totnum)) / monintrate
 
 int main()
 {	
+	cout << fixed << showpoint << setprecision(2);
+	cout << setw(6) << "Payment # " << setw(22) << "Remaning balance" << endl;
+
 	//outputs the balance after each months payment
-	cout << "Your balance after your first payment will be $" << baIN << endl;
-	cout << "Your balance after your second payment will be $"<< baIN2 << endl;
-	cout << "Your balance after your third payment will be $" << baIN3 << endl;
+	cout << setw(11) << "First payment" << setw(15) << baIN << setw(10) << endl;
+	cout << setw(11) << "Second payment" << setw(14) << baIN2 << setw(10) << endl;
+	cout << setw(11) << "Third payment" << setw(15) << baIN3 << setw(10) << endl;
+	
 	return 0;
 }

@@ -2,7 +2,7 @@
 //C Programming
 //Chapter 4 assignment 4A
 //Assignment4A.cpp
-//A program that takes input from the user and finds the 
+//A program that takes input from the user and calculates the roots of a quadratic equation
 
 #include <iostream>
 #include <cmath>

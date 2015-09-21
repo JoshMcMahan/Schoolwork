@@ -1,0 +1,5 @@
+The average pay for category X is 568.01
+The average pay for category Y is 479.02
+The average pay for category Z is 357.03
+The average number of employees is 56
+The average pay for all employees is 439.411

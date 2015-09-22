@@ -26,9 +26,9 @@ int main()
 	double pay2;
 	double pay3;
 
-	int num1;
-	int num2;
-	int num3;
+	int numEmp1;
+	int numEmp2;
+	int numEmp3;
 
 
 	
@@ -36,18 +36,18 @@ int main()
 	//Creating files for Payout
 	Payoutfile.open("Payoutfile.txt");
 
-	Payinfile >> cat1 >> pay1 >> num1
-		>> cat2 >> pay2 >> num2
-		>> cat3 >> pay3 >> num3;
+	Payinfile >> cat1 >> pay1 >> numEmp1
+		>> cat2 >> pay2 >> numEmp2
+		>> cat3 >> pay3 >> numEmp3;
 
-	int avgemp = (num1 + num2 + num3) / 3;
-	int totEmp = (num1 + num2 + num3);
+	int avgemp = (numEmp1 + numEmp2 + numEmp3) / 3;
+	int totEmp = (numEmp1 + numEmp2 + numEmp3);
 
 
 	//Calculating the average of each category
-	Payoutfile << "The average pay for category X is " << pay1 / num1 << endl
-		<< "The average pay for category Y is " << pay2 / num2 << endl
-		<< "The average pay for category Z is " << pay3 / num3 << endl
+	Payoutfile << "The average pay for category " cat1 "is " << pay1 / numEmp1 << endl
+		<< "The average pay for category " cat2 "is " << pay2 / numEmp2 << endl
+		<< "The average pay for category " cat3 "is " << pay3 / numEmp3 << endl
 		<< "The average number of employees is " << avgemp << endl
 		<< "The average pay for all employees is " << (pay1 + pay2 + pay3) / totEmp;
 

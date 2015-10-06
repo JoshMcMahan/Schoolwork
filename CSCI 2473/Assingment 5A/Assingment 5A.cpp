@@ -24,19 +24,19 @@ int main()
 		else
 			if (userinp == 'G' || userinp == 'H' || userinp == 'I' || userinp == 'g' || userinp == 'h' || userinp == 'i')
 				keypad = '4';
-			else 
+			else
 				if (userinp == 'J' || userinp == 'K' || userinp == 'L' || userinp == 'j' || userinp == 'k' || userinp == 'l')
 					keypad = '5';
-				else 
+				else
 					if (userinp == 'M' || userinp == 'N' || userinp == 'O' || userinp == 'm' || userinp == 'n' || userinp == 'o')
 						keypad = '6';
-					else 
+					else
 						if (userinp == 'P' || userinp == 'R' || userinp == 'S' || userinp == 'p' || userinp == 'r' || userinp == 's')
 							keypad = '7';
-						else 
+						else
 							if (userinp == 'T' || userinp == 'U' || userinp == 'V' || userinp == 't' || userinp == 'u' || userinp == 'v')
 								keypad = '8';
-							else 
+							else
 								if (userinp == 'W' || userinp == 'X' || userinp == 'Y' || userinp == 'w' || userinp == 'x' || userinp == 'y')
 									keypad = '9';
 								else
@@ -49,6 +49,6 @@ int main()
 
 
 
-return 0;
+	return 0;
 
 }

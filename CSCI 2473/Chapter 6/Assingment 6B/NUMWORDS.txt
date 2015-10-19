@@ -1,0 +1,4 @@
+3 letter words: 10
+4 letter words: 16
+5 letter words: 18
+6 letter words: 7

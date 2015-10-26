@@ -1,7 +1,7 @@
-The input file contains the following data: 
+The input file contains thes following data: 
 55 67 458 23 81 33 782 375 528 405 324 950 46 14 864 551 38 167 518 630 
 The average of all numbers is: 345.45
-The average of the first 12 numbers is:  630
+The average of the first 12 numbers is:  340.083
 The sum of ever third number is: 3000
 The smallest number is: 14
 the largest number is: 950

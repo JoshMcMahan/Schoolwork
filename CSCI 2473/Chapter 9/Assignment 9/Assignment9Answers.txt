@@ -1,0 +1,16 @@
+The area of the square is: 110.25
+
+The are of the rectangle is: 317.75
+
+The hypotenuse of the right triangle is: 46.8028
+
+The area of the right triangle is: 921.375
+
+The area of the isosceles triange is: 1401.38
+
+The circumfrence of the circle is: 380.134
+
+The area of the circle is: 13478.2
+
+The volume of the sphere is: 010E1302
+

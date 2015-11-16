@@ -1,0 +1,8 @@
+The integers are: 62 8 25 7 90 82 22 46 15 54 
+The fourth integer is: 7
+The sum of the last 6 integers is: 309
+The average of the last 6 integers is: 51.5
+The smallest integer is: 7
+The largest integer is: 90
+The first 4 integers in reverse order are: 7 25 8 62 
+The integers are: 7 8 15 22 25 46 54 62 82 90 

@@ -1,5 +1,3 @@
-
-
 #ifndef rectangle_h
 #define rectangle_h
 
@@ -17,7 +15,7 @@ public:
 	double getLength() const;
 	double getWidth() const;
 	bool isSquare();
-	void rectangle::errormsg();
+	void errorMsg();
 
 private:
 	double length;

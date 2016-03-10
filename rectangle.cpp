@@ -13,10 +13,10 @@ rectangle::rectangle(double L)
 {
 	width = 1.0;
 	if (L < 0.0 || L > 20.0)
-		{
-			length = 1.0;
-			errormsg();
-		}
+	{
+		length = 1.0;
+		errormsg();
+	}
 	else
 		length = L;
 }
@@ -56,7 +56,7 @@ void rectangle::setLength(double L)
 	{
 
 	}
-	else 
+	else
 		length = 1.0;
 }
 
@@ -89,6 +89,3 @@ void rectangle::errormsg()
 {
 	cout << "Error: an attempt has been made to create an object with invalid parameters!" << endl;
 }
-
-
-

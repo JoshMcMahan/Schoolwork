@@ -1,4 +1,9 @@
-class rectangle{
+
+
+#ifndef rectangle_h
+#define rectangle_h
+
+class rectangle {
 public:
 	rectangle();
 	rectangle(double L);
@@ -12,10 +17,12 @@ public:
 	double getLength() const;
 	double getWidth() const;
 	bool isSquare();
-
+	void rectangle::errormsg();
 
 private:
 	double length;
 	double width;
 
 };
+
+#endif

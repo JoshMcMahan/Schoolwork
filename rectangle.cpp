@@ -1,6 +1,6 @@
-
 #include "rectangle.h"
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -15,7 +15,7 @@ rectangle::rectangle(double L)
 	if (L < 0.0 || L > 20.0)
 	{
 		length = 1.0;
-		errormsg();
+		errorMsg();
 	}
 	else
 		length = L;
@@ -26,14 +26,16 @@ rectangle::rectangle(double L, double W)
 		length = 1.0;
 	else
 		length = L;
+	return;
 
 	if (width < 0.0 || width > 20.0)
 		width = 1.0;
 	else
 	{
 		width = W;
-		errormsg();
+		errorMsg();
 	}
+	return;
 }
 rectangle::~rectangle()
 {
@@ -42,7 +44,7 @@ rectangle::~rectangle()
 
 double rectangle::getPerimeter() const
 {
-	return  2(length * width);
+	return ((2 * length) + (2 * width));
 }
 
 double rectangle::getArea() const
@@ -85,7 +87,7 @@ bool rectangle::isSquare()
 	return length - width < .0001;
 }
 
-void rectangle::errormsg()
+void rectangle::errorMsg()
 {
 	cout << "Error: an attempt has been made to create an object with invalid parameters!" << endl;
 }

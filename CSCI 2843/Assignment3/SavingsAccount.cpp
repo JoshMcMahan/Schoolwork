@@ -31,7 +31,7 @@ SavingsAccount::SavingsAccount(string name, double beginningBalance) : objectnum
 
 SavingsAccount::~SavingsAccount()
 {
-	cout << endl << "Object no longer exist!" << endl;
+	cout << endl << objectID << "no longer exist!" << endl;
 }
 
 void SavingsAccount::setName(string name)

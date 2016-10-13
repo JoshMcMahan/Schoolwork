@@ -10,6 +10,7 @@ public class Caesar {
     public static void main(String[] arg) {
 
         openFile();
+        readFile();
 
 
 
@@ -46,14 +47,17 @@ public class Caesar {
             e.printStackTrace();
         }
     }
-    public void readFile(){
+    public static void readFile(){
         File myFile = new File("CaesarCipher.txt");
         String line;
         try{
             FileReader fr = new FileReader(myFile);
             BufferedReader br = new BufferedReader(fr);
+            System.out.println("This line reached 1");
+            System.out.println(br);
             while((line = br.readLine()) != null) {
                 System.out.println(line);
+
             }
             br.close();
         }

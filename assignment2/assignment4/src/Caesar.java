@@ -4,68 +4,70 @@ import java.io.*;
 
 public class Caesar {
 
-    private Scanner myFile;
+    // private Scanner myFile;
+    private static BufferedReader br;
+    private static FileReader fr;
+    private static PrintWriter fw;
+    File inFile;
+    File outFile;
+    int mykey;
 
 
     public static void main(String[] arg) {
-
-        openFile();
-        readFile();
-
-
-
-        System.out.println(cipher('A', 3));
-
-    }
-
-    public static char cipher(char myCipher, int myKey) {
-
-
-        if (myCipher < 32 || myCipher > 126)
-            return myCipher;
-        else
-            myCipher += (char) (myKey);
-
-        if(myCipher > 126){
-            myCipher -= 95;
-            return myCipher;}
-        else if(myCipher < 32){
-            myCipher += 95;
-            return myCipher;}
-        else
-            return myCipher;
+        String line = readFile();
+        String myCipher = cipher(line, 3);
+        //cipher(line, 3);
+        fw.write(myCipher);
+        fw.flush();
+        System.out.println(line);
 
 
     }
-    public static void openFile(){
-        try{
-            Scanner myFile = new Scanner(new File("CaesarCipher.txt"));
-            System.out.println("File opened");
+
+
+    public static String cipher(String toCipher, int myKey) {
+        String myCipher = "";
+
+
+        for (int i = 0; i < toCipher.length(); i++) {
+            char tempChar = toCipher.charAt(i);
+            if (tempChar > 32 || tempChar < 126);
+            tempChar = (char) (tempChar + myKey);
+            if (tempChar > 126) tempChar = (char) (tempChar - 95);
+            if (tempChar < 32) tempChar = (char) (tempChar + 95);
+            myCipher += tempChar;
+
         }
-        catch (Exception e){
-            System.out.println("File not found ");
-            e.printStackTrace();
-        }
+        return myCipher;
     }
-    public static void readFile(){
-        File myFile = new File("CaesarCipher.txt");
-        String line;
-        try{
-            FileReader fr = new FileReader(myFile);
-            BufferedReader br = new BufferedReader(fr);
+
+    public static String readFile() {
+        File inFile = new File("inFile.txt");
+        File outFile = new File("outFile.txt");
+        String duck = "";
+
+        try {
+            fr = new FileReader(inFile);
+            br = new BufferedReader(fr);
+            fw = new PrintWriter(outFile);
             System.out.println("This line reached 1");
             System.out.println(br);
-            while((line = br.readLine()) != null) {
-                System.out.println(line);
+            String line = "";
+            while ((line = br.readLine()) != null) {
+                //System.out.println(line);
+                //fw.write(line);
+                duck += line;
 
             }
             br.close();
-        }
-        catch (IOException e){
+
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("File not found");
         }
+        return duck;
     }
 
 }
+
 

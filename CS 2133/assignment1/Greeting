@@ -1,8 +1,0 @@
-public class Greeting {
-    public Greeting() {
-    }
-
-    public static void main(String[] var0) {
-        System.out.println("Konnichiwa");
-    }
-}

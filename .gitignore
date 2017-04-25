@@ -218,3 +218,9 @@ _Pvt_Extensions
 
 *.sln
 *.vcxproj*
+
+*.iml
+
+*.xml
+
+CS 3443/Program3/.idea/.name

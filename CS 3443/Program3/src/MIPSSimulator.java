@@ -301,6 +301,25 @@ public class MIPSSimulator {
                 adv_pc(4);
             } else if ((Instr & mask7) == syscallInst) {
                 //advance_pc (4);
+                if (general_Registers[2] == 1) {
+                    System.out.println(general_Registers[2]);
+                }else if (general_Registers[2] == 4){
+
+                }else if (general_Registers[2] == 11) {
+                    for (int i = 0; i < 1; i++){
+                        System.out.println(general_Registers[0]);
+                    }
+                }else if (general_Registers[2] == 5) {
+                        Scanner userIn = new Scanner(System.in);
+                    int sysCallIn = userIn.nextInt();
+                    general_Registers[2] = sysCallIn;
+                }else if (general_Registers[2] == 8) {
+                    //Do the thing!!
+                }else if (general_Registers[2] ==9) {
+                     //Do the thing!!
+                }else if (general_Registers[2] == 10){
+                    System.exit(0);
+                }
                 adv_pc(4);
             } else if ((Instr & mask7) == xorInst) {
                 //$d = $s ^ $t; advance_pc (4);

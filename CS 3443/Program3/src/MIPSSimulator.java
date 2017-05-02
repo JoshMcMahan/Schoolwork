@@ -73,7 +73,10 @@ public class MIPSSimulator {
             while (user_in.hasNext()) {
                 String currentLine = user_in.nextLine();
                 String splitString[] = currentLine.split("\\s");
-
+                boolean isPC = false;
+                int isR = -1;
+                int step = 0;
+                int currentAddress = -1;
                 for (String strings : splitString) {
                     if (strings.equals("")) {
                         continue;
@@ -83,20 +86,36 @@ public class MIPSSimulator {
                         strings = strings.substring(1, strings.length() - 1); // Remove brackets
                         if (strings.startsWith("P")) {
                             // Do PC code
-                            System.out.println("Reached PC block, String is: " + strings);
+                            isPC = true;
+                            //System.out.println("Reached PC block, String is: " + strings);
 
                         } else if (strings.startsWith("R")) {
                             // Do R code
+                            isR = Integer.parseInt(strings.substring(1));
 
-                            System.out.println("Reached R block, String is: " + strings);
+                            //System.out.println("Reached R block, String is: " + strings);
 
-                        } else
-                        // Its a Hex address
+                        } else // Its a Hex address
                         {
-                            System.out.println("We're a hex address inside brackets, String is: " + strings);
+                            currentAddress = Integer.parseInt(strings.substring(2), 16);
+                            //System.out.println("We're a hex address inside brackets, String is: " + strings);
                         }
                     } else if (strings.startsWith("0x")) {
-                        System.out.print(" Our instruction is: " + strings + "\n");
+                        if (isPC) {
+                            PC = Integer.parseInt(strings.substring(2), 16);
+                            //System.out.println("Our PC is " + PC);
+                        } else if (!(isR == -1)) {
+                            general_Registers[isR] = Integer.parseInt(strings.substring(2), 16);
+                            //System.out.println("R" + isR + " is: " + String.format("%08x",general_Registers[isR]));
+                        } else // its main memory
+                        {
+                            //System.out.println("Strings as hex int: " +Integer.parseInt(strings.substring(2), 16));
+                            int address = currentAddress + step;
+                            main_Memory[address] = Integer.parseInt(strings.substring(2), 16);
+                            step++;
+                            //System.out.println("Memory address " + String.format("%08x",address) + " is set to: " + String.format("%08x",main_Memory[address]));
+                        }
+                        //System.out.print(" Our instruction is: " + strings + "\n");
                     } else {
                         break; // the string isn't valid
                     }
@@ -118,6 +137,10 @@ public class MIPSSimulator {
             int shamt = Instr >> 6 & 0b11111;
             int func = Instr & 0b111111;
             int imm = Instr & 0b1111111111111111;
+            int target = Instr & 0b00000011111111111111111111111111;
+            int signExtendImm = imm;
+            if (signExtendImm < 0) signExtendImm = (Instr | 0xFFFF0000);
+
             int offset = 4;
 
             if ((Instr & mask1) == addInst) {
@@ -146,37 +169,38 @@ public class MIPSSimulator {
             } else if ((Instr & mask2) == beqInst) {
                 //if $s == $t advance_pc (offset << 2)); else advance_pc (4)
                 if (general_Registers[s] == general_Registers[t])
-                    adv_pc(offset << 2);
+                    adv_pc(signExtendImm << 2);
                 else adv_pc(4);
             } else if ((Instr & mask3) == bgezInst) {
                 //if $s >= 0 advance_pc (offset << 2)); else advance_pc (4);
                 if (general_Registers[s] >= 0)
-                    adv_pc(offset << 2);
+                    adv_pc(signExtendImm << 2);
                 else adv_pc(4);
             } else if ((Instr & mask3) == bgezalInst) {
                 //if $s >= 0 $31 = PC + 8 (or nPC + 4); advance_pc (offset << 2)); else advance_pc (4);
                 if (general_Registers[s] >= 0) {
                     general_Registers[31] = PC + 8;
-                } else adv_pc(offset << 2);
+                } else adv_pc(signExtendImm << 2);
             } else if ((Instr & mask3) == bgtzInst) {
                 //if $s > 0 advance_pc (offset << 2)); else advance_pc (4);
                 if (general_Registers[s] > 0)
-                    adv_pc(4);
+                    adv_pc(signExtendImm << 2);
+                else adv_pc(4);
             } else if ((Instr & mask3) == blezInst) {
                 //if $s <= 0 advance_pc (offset << 2)); else advance_pc (4);
                 if (general_Registers[s] <= 0)
-                    adv_pc(offset << 2);
+                    adv_pc(signExtendImm << 2);
                 else adv_pc(4);
             } else if ((Instr & mask3) == bltzalInst) {
                 //if $s < 0 $31 = PC + 8 (or nPC + 4); advance_pc (offset << 2)); else advance_pc (4);
                 if (general_Registers[s] < 0) {
                     general_Registers[s] = PC + 8;
-                    adv_pc(offset << 2);
+                    adv_pc(signExtendImm << 2);
                 } else adv_pc(4);
             } else if ((Instr & mask2) == bneInst) {
                 //if $s != $t advance_pc (offset << 2)); else advance_pc (4);
                 if (general_Registers[s] != general_Registers[t]) {
-                    adv_pc(offset << 2);
+                    adv_pc(signExtendImm << 2);
                 } else adv_pc(4);
             } else if ((Instr & mask4) == divInst) {
                 //$LO = $s / $t; $HI = $s % $t; advance_pc (4);
@@ -186,19 +210,19 @@ public class MIPSSimulator {
             } else if ((Instr & mask2) == jumpInst) {
                 //PC = nPC; nPC = (PC & 0xf0000000) | (target << 2);
                 PC = nPC;
-                nPC = (PC & 0xf0000000) | (general_Registers[t] << 2);
+                nPC = (PC & 0xf0000000) | (target << 2);
             } else if ((Instr & mask2) == jalInst) {
                 //$31 = PC + 8 (or nPC + 4); PC = nPC; nPC = (PC & 0xf0000000) | (target << 2);
                 general_Registers[31] = PC + 8;
                 PC = nPC;
-                nPC = (PC & 0xf0000000) | (general_Registers[t] << 2);
+                nPC = (PC & 0xf0000000) | (target << 2);
             } else if ((Instr & mask5) == jrInst) {
                 //PC = nPC; nPC = $s;
                 PC = nPC;
                 nPC = general_Registers[s];
             } else if ((Instr & mask2) == lbInst) {
                 //$t = MEM[$s + offset]; advance_pc (4);
-                general_Registers[t] = main_Memory[s + offset];
+                general_Registers[t] = main_Memory[s + imm];
                 adv_pc(4);
             } else if ((Instr & mask2) == luiInst) {
                 //$t = (imm << 16); advance_pc (4);
@@ -206,7 +230,7 @@ public class MIPSSimulator {
                 adv_pc(4);
             } else if ((Instr & mask2) == lwInst) {
                 //$t = MEM[$s + offset]; advance_pc (4);
-                general_Registers[t] = main_Memory[s + offset];
+                general_Registers[t] = main_Memory[s + imm];
                 adv_pc(4);
             } else if ((Instr & mask6) == mfhiInst) {
                 //$d = $HI; advance_pc (4);
@@ -272,8 +296,9 @@ public class MIPSSimulator {
                 if (general_Registers[s] < general_Registers[t]) {
                     general_Registers[d] = 1;
                     adv_pc(4);
-                } else {general_Registers[d] = zero;
-                        adv_pc(4);
+                } else {
+                    general_Registers[d] = zero;
+                    adv_pc(4);
                 }
             } else if ((Instr & mask7) == sraInst) {
                 //$d = $t >> h; advance_pc (4);
@@ -302,22 +327,23 @@ public class MIPSSimulator {
             } else if ((Instr & mask7) == syscallInst) {
                 //advance_pc (4);
                 if (general_Registers[2] == 1) {
-                    System.out.println(general_Registers[2]);
-                }else if (general_Registers[2] == 4){
+                    System.out.println(general_Registers[4]);
+                } else if (general_Registers[2] == 4) {
+                    //register 4 points to the string
 
-                }else if (general_Registers[2] == 11) {
-                    for (int i = 0; i < 1; i++){
+                } else if (general_Registers[2] == 11) {
+                    for (int i = 0; i < 1; i++) {
                         System.out.println(general_Registers[0]);
                     }
-                }else if (general_Registers[2] == 5) {
-                        Scanner userIn = new Scanner(System.in);
+                } else if (general_Registers[2] == 5) {
+                    Scanner userIn = new Scanner(System.in);
                     int sysCallIn = userIn.nextInt();
                     general_Registers[2] = sysCallIn;
-                }else if (general_Registers[2] == 8) {
+                } else if (general_Registers[2] == 8) {
                     //Do the thing!!
-                }else if (general_Registers[2] ==9) {
-                     //Do the thing!!
-                }else if (general_Registers[2] == 10){
+                } else if (general_Registers[2] == 9) {
+                    //Do the thing!!
+                } else if (general_Registers[2] == 10) {
                     System.exit(0);
                 }
                 adv_pc(4);

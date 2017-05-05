@@ -12,48 +12,51 @@ public class MIPSSimulator {
     static int Hi;
     static int Lo;
     static int zero = 0;
+    static int memAllocat = 867530;
+    static boolean debug = true;
 
-    private final static int addInst = 0b000000000000000000000000100000;
-    private final static int addIInst = 0b00100000000000000000000000000000;
-    private final static int addIUInst = 0b00100100000000000000000000000000;
-    private final static int addUInst = 0b00000000000000000000000000100001;
-    private final static int andInst = 0b00000000000000000000000000100100;
-    private final static int andIInst = 0b00110000000000000000000000000000;
-    private final static int beqInst = 0b00010000000000000000000000000000;
-    private final static int bgezInst = 0b00000100000000010000000000000000;
-    private final static int bgezalInst = 0b00000100000100010000000000000000;
-    private final static int bgtzInst = 0b00011100000000000000000000000000;
-    private final static int blezInst = 0b00011000000000000000000000000000;
-    private final static int bltzalInst = 0b00000100000100000000000000000000;
-    private final static int bneInst = 0b00010100000000000000000000000000;
-    private final static int divInst = 0b00000000000000000000000000011010;
-    private final static int jumpInst = 0b00001000000000000000000000000000;
-    private final static int jalInst = 0b00001100000000000000000000000000;
-    private final static int jrInst = 0b00000000000000000000000000001000;
-    private final static int lbInst = 0b10000000000000000000000000000000;
-    private final static int luiInst = 0b00111100000000000000000000000000;
-    private final static int lwInst = 0b10001100000000000000000000000000;
-    private final static int mfhiInst = 0b00000000000000000000000000010000;
-    private final static int mfloInst = 0b00000000000000000000000000001000;
-    private final static int multInst = 0b00000000000000000000000000011000;
-    private final static int orInst = 0b00000000000000000000000000100101;
-    private final static int oriInst = 0b00110100000000000000000000000000;
-    private final static int sbInst = 0b10100000000000000000000000000000;
-    private final static int sllInst = 0b00000000000000000000000000000000;
-    private final static int sllvInst = 0b00000000000000000000000000000100;
-    private final static int sltInst = 0b00000000000000000000000000101010;
-    private final static int sltiInst = 0b00101000000000000000000000000000;
-    private final static int sltiuInst = 0b00101100000000000000000000000000;
-    private final static int sltuInst = 0b00000000000000000000000000101011;
-    private final static int sraInst = 0b00000000000000000000000000000010;
-    private final static int srlInst = 0b00000000000000000000000000000010;
-    private final static int srlvInst = 0b00000000000000000000000000000110;
-    private final static int subInst = 0b00000000000000000000000000100010;
-    private final static int subuInst = 0b00000000000000000000000000100011;
-    private final static int swInst = 0b10101100000000000000000000000000;
-    private final static int syscallInst = 0b00000000000000000000000000001100;
-    private final static int xorInst = 0b00000000000000000000000000100110;
-    private final static int xoriInst = 0b00111000000000000000000000000000;
+    private final static int addInst = 0b0000_0000_0000_0000_0000_0000_0010_0000;
+    private final static int addIInst = 0b0010_0000_0000_0000_0000_0000_0000_0000;
+    private final static int addIUInst = 0b0010_0100_0000_0000_0000_0000_0000_0000;
+    private final static int addUInst = 0b0000_0000_0000_0000_0000_0000_0010_0001;
+    private final static int andInst = 0b0000_0000_0000_0000_0000_0000_0010_0100;
+    private final static int andIInst = 0b0011_0000_0000_0000_0000_0000_0000_0000;
+    private final static int beqInst = 0b0001_0000_0000_0000_0000_0000_0000_0000;
+    private final static int bgezInst = 0b0000_0100_0000_0001_0000_0000_0000_0000;
+    private final static int bgezalInst = 0b0000_0100_0001_0001_0000_0000_0000_0000;
+    private final static int bgtzInst = 0b0001_1100_0000_0000_0000_0000_0000_0000;
+    private final static int blezInst = 0b0001_1000_0000_0000_0000_0000_0000_0000;
+    private final static int bltzInst = 0b0000_0100_0000_0000_0000_0000_0000_0000;
+    private final static int bltzalInst = 0b0000_0100_0001_0000_0000_0000_0000_0000;
+    private final static int bneInst = 0b0001_0100_0000_0000_0000_0000_0000_0000;
+    private final static int divInst = 0b0000_0000_0000_0000_0000_0000_0001_1010;
+    private final static int jumpInst = 0b0000_1000_0000_0000_0000_0000_0000_0000;
+    private final static int jalInst = 0b0000_1100_0000_0000_0000_0000_0000_0000;
+    private final static int jrInst = 0b0000_0000_0000_0000_0000_0000_0000_1000;
+    private final static int lbInst = 0b1000_0000_0000_0000_0000_0000_0000_0000;
+    private final static int luiInst = 0b0011_1100_0000_0000_0000_0000_0000_0000;
+    private final static int lwInst = 0b1000_1100_0000_0000_0000_0000_0000_0000;
+    private final static int mfhiInst = 0b0000_0000_0000_0000_0000_0000_0001_0000;
+    private final static int mfloInst = 0b0000_0000_0000_0000_0000_0000_0001_0010;
+    private final static int multInst = 0b0000_0000_0000_0000_0000_0000_0001_1000;
+    private final static int orInst = 0b0000_0000_0000_0000_0000_0000_0010_0101;
+    private final static int oriInst = 0b0011_0100_0000_0000_0000_0000_0000_0000;
+    private final static int sbInst = 0b1010_0000_0000_0000_0000_0000_0000_0000;
+    private final static int sllInst = 0b0000_0000_0000_0000_0000_0000_0000_0000;
+    private final static int sllvInst = 0b0000_0000_00000_0000_0000_0000_0000_0100;
+    private final static int sltInst = 0b0000_0000_0000_0000_0000_0000_0010_1010;
+    private final static int sltiInst = 0b0010_1000_0000_0000_0000_0000_0000_0000;
+    private final static int sltiuInst = 0b0010_1100_0000_0000_0000_0000_0000_0000;
+    private final static int sltuInst = 0b0000_0000_0000_0000_0000_0000_0010_1011;
+    private final static int sraInst = 0b0000_0000_0000_0000_0000_0000_0000_0011;
+    private final static int srlInst = 0b0000_0000_0000_0000_0000_0000_0000_0010;
+    private final static int srlvInst = 0b0000_0000_0000_0000_0000_0000_0000_0110;
+    private final static int subInst = 0b0000_0000_0000_0000_0000_0000_0010_0010;
+    private final static int subuInst = 0b0000_0000_0000_0000_0000_0000_0010_0011;
+    private final static int swInst = 0b1010_1100_0000_0000_0000_0000_0000_0000;
+    private final static int syscallInst = 0b0000_0000_0000_0000_0000_0000_0000_1100;
+    private final static int xorInst = 0b0000_0000_0000_0000_0000_0000_0010_0110;
+    private final static int xoriInst = 0b0011_1000_0000_0000_0000_0000_0000_0000;
 
     private final static int mask1 = 0b11111100000000000000011111111111;
     private final static int mask2 = 0b11111100000000000000000000000000;
@@ -65,9 +68,12 @@ public class MIPSSimulator {
 
     public static void main(String[] args) {
 
+        System.out.println("This is a MIPS Simulator by Joshua McMahan\n");
+
+
         // Loads the file that will be selected by the user into a scanner
         try {
-            Scanner user_in = new Scanner(new File("hello.txt"));
+            Scanner user_in = new Scanner(new File(args[0]));
 
             //checks the file for lines that don't start with [ and skips them
             while (user_in.hasNext()) {
@@ -91,27 +97,27 @@ public class MIPSSimulator {
 
                         } else if (strings.startsWith("R")) {
                             // Do R code
-                            isR = Integer.parseInt(strings.substring(1));
+                            isR = (int) Long.parseLong(strings.substring(1));
 
                             //System.out.println("Reached R block, String is: " + strings);
 
                         } else // Its a Hex address
                         {
-                            currentAddress = Integer.parseInt(strings.substring(2), 16);
+                            currentAddress = (int) Long.parseLong(strings.substring(2), 16);
                             //System.out.println("We're a hex address inside brackets, String is: " + strings);
                         }
                     } else if (strings.startsWith("0x")) {
                         if (isPC) {
-                            PC = Integer.parseInt(strings.substring(2), 16);
+                            PC = (int) Long.parseLong(strings.substring(2), 16);
                             //System.out.println("Our PC is " + PC);
                         } else if (!(isR == -1)) {
-                            general_Registers[isR] = Integer.parseInt(strings.substring(2), 16);
+                            general_Registers[isR] = (int) Long.parseLong(strings.substring(2), 16);
                             //System.out.println("R" + isR + " is: " + String.format("%08x",general_Registers[isR]));
                         } else // its main memory
                         {
                             //System.out.println("Strings as hex int: " +Integer.parseInt(strings.substring(2), 16));
-                            int address = currentAddress + step;
-                            main_Memory[address] = Integer.parseInt(strings.substring(2), 16);
+                            int address = currentAddress / 4 + step;
+                            main_Memory[address] = (int) Long.parseLong(strings.substring(2), 16);
                             step++;
                             //System.out.println("Memory address " + String.format("%08x",address) + " is set to: " + String.format("%08x",main_Memory[address]));
                         }
@@ -140,8 +146,37 @@ public class MIPSSimulator {
             int target = Instr & 0b00000011111111111111111111111111;
             int signExtendImm = imm;
             if (signExtendImm < 0) signExtendImm = (Instr | 0xFFFF0000);
-
             int offset = 4;
+
+            if (debug) {
+                while (true) {
+                    System.out.println("Your current PC is: " + PC);
+                    System.out.println("and your instruction in Hex is: 0x" + String.format("%08x", Instr));
+                    System.out.println("Please press enter to advance. Type r for registers, memory and number for memory. ");
+                    Scanner scan = new Scanner(System.in);
+                    String scannedString = scan.nextLine();
+                    if (scannedString.equals(""))
+                        break;
+                    else if (scannedString.equals("r")) {
+                        int i = 0;
+                        while (i < 32) {
+                            System.out.println("Reg " + i + ": " + general_Registers[i]);
+                            i++;
+                        }
+                    } else if (scannedString.startsWith("memory")) {
+                        String memory[] = scannedString.split("\\s");
+                        if (memory.length < 2) {
+                            System.out.print("Usage: memory 123");
+                        } else {
+                            int position = Integer.parseInt(memory[1]);
+                            System.out.println("Memory position " + position + ": " + main_Memory[position]);
+                        }
+
+                    }
+                    System.out.println("\n");
+                }
+
+            }
 
             if ((Instr & mask1) == addInst) {
                 //$d = $s + $t; advance_pc (4);
@@ -154,6 +189,7 @@ public class MIPSSimulator {
             } else if ((Instr & mask2) == addIUInst) {
                 //$t = $s + imm; advance_pc (4);
                 general_Registers[t] = general_Registers[s] + imm;
+                adv_pc(4);
             } else if ((Instr & mask1) == addUInst) {
                 //$d = $s + $t; advance_pc (4);
                 general_Registers[d] = general_Registers[s] + general_Registers[t];
@@ -191,6 +227,10 @@ public class MIPSSimulator {
                 if (general_Registers[s] <= 0)
                     adv_pc(signExtendImm << 2);
                 else adv_pc(4);
+            } else if ((Instr & mask3) == bltzInst) {
+
+                if (general_Registers[s] < 0)
+                    adv_pc(signExtendImm << 2);
             } else if ((Instr & mask3) == bltzalInst) {
                 //if $s < 0 $31 = PC + 8 (or nPC + 4); advance_pc (offset << 2)); else advance_pc (4);
                 if (general_Registers[s] < 0) {
@@ -330,24 +370,36 @@ public class MIPSSimulator {
                     System.out.println(general_Registers[4]);
                 } else if (general_Registers[2] == 4) {
                     //register 4 points to the string
-                    int mask = 0xFF;
-                    int current = main_Memory[general_Registers[4]];
-                    System.out.println( String.format("%02x" ,mask & current));
-                    System.out.println( String.format("%02x" ,mask & (current>>2)));
+                    int address = general_Registers[4];
+                    while (true) {
+                        int temp = main_Memory[address / 4];
+                        temp >>= (address % 4) * 8;
+                        temp &= 0xFF;
+
+                        if (temp == '\0')
+                            break;
+                        address++;
+                        System.out.print((char) temp);
+                    }
 
 
                 } else if (general_Registers[2] == 11) {
-                    for (int i = 0; i < 1; i++) {
-                        System.out.println(general_Registers[0]);
-                    }
+                    System.out.print((char) general_Registers[4]);
                 } else if (general_Registers[2] == 5) {
                     Scanner userIn = new Scanner(System.in);
-                    int sysCallIn = userIn.nextInt();
-                    general_Registers[2] = sysCallIn;
+                    general_Registers[2] = userIn.nextInt();
                 } else if (general_Registers[2] == 8) {
-                    //Do the thing!!
+                    Scanner userIn = new Scanner(System.in);
+
+                    int size = general_Registers[5] - 1;
+                    String userString = userIn.nextLine();
+                    for (int i = 0; i < size; i++) {
+                        main_Memory[general_Registers[4 + i]] = (int) userString.charAt(i);
+                    }
                 } else if (general_Registers[2] == 9) {
-                    //Do the thing!!
+                    int empty = general_Registers[4];
+                    general_Registers[2] = memAllocat;
+                    memAllocat += empty;
                 } else if (general_Registers[2] == 10) {
                     System.exit(0);
                 }
@@ -370,3 +422,5 @@ public class MIPSSimulator {
         nPC += offset;
     }
 }
+
+

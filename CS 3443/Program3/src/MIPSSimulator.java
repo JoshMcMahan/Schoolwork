@@ -330,6 +330,11 @@ public class MIPSSimulator {
                     System.out.println(general_Registers[4]);
                 } else if (general_Registers[2] == 4) {
                     //register 4 points to the string
+                    int mask = 0xFF;
+                    int current = main_Memory[general_Registers[4]];
+                    System.out.println( String.format("%02x" ,mask & current));
+                    System.out.println( String.format("%02x" ,mask & (current>>2)));
+
 
                 } else if (general_Registers[2] == 11) {
                     for (int i = 0; i < 1; i++) {

@@ -2,6 +2,7 @@
 
 int main() {
     printf("Joshua McMahan\n");
+    printf("Please enter a word: ");
 
     char user_In[64];
     scanf("%s", user_In);
@@ -12,7 +13,7 @@ int main() {
         i++;
     }
     int j = 0;
-    while ( j < i + 2) {
+    while ( j <= i + 1) {
         printf("*");
         j++;
     }
@@ -22,7 +23,7 @@ int main() {
     printf("*");
     printf("\n");
     j = 0;
-    while ( j < i + 2) {
+    while ( j <= i + 1) {
         printf("*");
         j++;
     }

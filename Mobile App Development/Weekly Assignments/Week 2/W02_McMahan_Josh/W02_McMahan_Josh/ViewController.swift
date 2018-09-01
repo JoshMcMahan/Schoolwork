@@ -15,6 +15,16 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBOutlet weak var numDisplay: UILabel!
+    
+    @IBAction func keyPad(_ sender: Any) {
+        
+    }
+    
+    
+    @IBAction func clearBtn(_ sender: Any) {
+    }
+    @IBAction func undoBtn(_ sender: Any) {
+    }
 }
 

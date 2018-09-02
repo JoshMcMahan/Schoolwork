@@ -17,14 +17,32 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var numDisplay: UILabel!
     
-    @IBAction func keyPad(_ sender: Any) {
-        
+    
+    var totalPressed:[Int] = []
+    var total = 0
+    
+    @IBAction func keyPad(_ sender: UIButton) {
+        let numPressed:Int = Int(sender.titleLabel!.text!)!
+        totalPressed.append(numPressed)
+        recalculateTotal()
     }
     
     
-    @IBAction func clearBtn(_ sender: Any) {
+    @IBAction func handleUndo(_ sender: UIButton) {
+        if totalPressed.count > 0 {
+            totalPressed.removeLast()
+            recalculateTotal()
+        }
     }
-    @IBAction func undoBtn(_ sender: Any) {
+    
+    @IBAction func handleClear(_ sender: UIButton) {
+        totalPressed.removeAll()
+        recalculateTotal()
+    }
+    
+    func recalculateTotal() {
+        total = totalPressed.reduce(0, +)
+        numDisplay.text = String(total)
     }
 }
 

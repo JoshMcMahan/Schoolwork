@@ -1,24 +1,19 @@
-let resolve, promise
-const resetRouteChangePromise = () => {
-  promise = new Promise(r => {
-    resolve = r
-  })
-}
-resetRouteChangePromise()
-const waitForRouteChange = () => promise
+let promiseResolvers = []
 
-const resolveRouteChangePromise = () => {
-  resolve(window.location)
+const addListener = () =>
+  new Promise(resolve => {
+    promiseResolvers.push(resolve)
+  })
+
+const resolveRouteChangeListeners = () => {
+  promiseResolvers.forEach(r => r(window.location))
+  promiseResolvers = []
 }
 
 // We need to set this function on the window
 // so it's accessible to Cypress for tests.
 if (typeof window !== `undefined`) {
-  window.___waitForRouteChange = waitForRouteChange
+  window.___waitForRouteChange = addListener
 }
 
-export {
-  waitForRouteChange,
-  resolveRouteChangePromise,
-  resetRouteChangePromise,
-}
+export { addListener, resolveRouteChangeListeners }

@@ -2,10 +2,7 @@ import loader, { setApiRunnerForLoader } from "./loader"
 import redirects from "./redirects.json"
 import { apiRunner } from "./api-runner-browser"
 import emitter from "./emitter"
-import {
-  resolveRouteChangePromise,
-  resetRouteChangePromise,
-} from "./wait-for-route-change"
+import { resolveRouteChangeListeners } from "./wait-for-route-change"
 import { navigate as reachNavigate } from "@reach/router"
 import parsePath from "./parse-path"
 import loadDirectlyOr404 from "./load-directly-or-404"
@@ -45,7 +42,7 @@ const onPreRouteUpdate = location => {
 const onRouteUpdate = location => {
   if (!maybeRedirect(location.pathname)) {
     apiRunner(`onRouteUpdate`, { location })
-    resolveRouteChangePromise()
+    resolveRouteChangeListeners()
 
     // Temp hack while awaiting https://github.com/reach/router/issues/119
     window.__navigatingToLink = false
@@ -73,8 +70,6 @@ const navigate = (to, options = {}) => {
     window.location = pathname
     return
   }
-
-  resetRouteChangePromise()
 
   // Start a timer to wait for a second before transitioning and showing a
   // loader in case resources aren't around yet.

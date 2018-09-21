@@ -1,27 +1,18 @@
 {
   "nodes": {
     "SitePage /dev-404-page/": {
-      "jsonName": "dev-404-page-5f9",
-      "internalComponentName": "ComponentDev404Page",
       "path": "/dev-404-page/",
-      "component": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/.cache/dev-404-page.js",
-      "componentChunkName": "component---cache-dev-404-page-js",
-      "context": {},
-      "pluginCreator___NODE": "Plugin dev-404-page",
-      "pluginCreatorId": "Plugin dev-404-page",
-      "componentPath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/.cache/dev-404-page.js",
       "id": "SitePage /dev-404-page/",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "0de3ec329a1459a900bfa72d0fe391f9",
-        "description": "Plugin dev-404-page",
+        "contentDigest": "f91d29e10ba680b413138cf9ed86e655",
         "owner": "internal-data-bridge"
       }
     },
     "Plugin dev-404-page": {
-      "resolve": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/node_modules/gatsby/dist/internal-plugins/dev-404-page",
+      "resolve": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/node_modules/gatsby/dist/internal-plugins/dev-404-page",
       "id": "Plugin dev-404-page",
       "name": "dev-404-page",
       "version": "1.0.0",
@@ -33,7 +24,7 @@
       ],
       "browserAPIs": [],
       "ssrAPIs": [],
-      "pluginFilepath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/node_modules/gatsby/dist/internal-plugins/dev-404-page",
+      "pluginFilepath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/node_modules/gatsby/dist/internal-plugins/dev-404-page",
       "packageJson": {
         "name": "dev-404-page",
         "description": "Internal plugin to add a 404 page in development with helpful information",
@@ -50,13 +41,13 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "8a42da35145cd3750b8a4178d1a223d2",
+        "contentDigest": "597b2c008e73dc523472460f4bda6dd0",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
     "Plugin load-babel-config": {
-      "resolve": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/node_modules/gatsby/dist/internal-plugins/load-babel-config",
+      "resolve": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/node_modules/gatsby/dist/internal-plugins/load-babel-config",
       "id": "Plugin load-babel-config",
       "name": "load-babel-config",
       "version": "1.0.0",
@@ -68,7 +59,7 @@
       ],
       "browserAPIs": [],
       "ssrAPIs": [],
-      "pluginFilepath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/node_modules/gatsby/dist/internal-plugins/load-babel-config",
+      "pluginFilepath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/node_modules/gatsby/dist/internal-plugins/load-babel-config",
       "packageJson": {
         "name": "load-babel-config",
         "description": "Internal plugin that handles loading Babel configs",
@@ -85,13 +76,13 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "6a34d6477940a6d80d9df50f3f0c2203",
+        "contentDigest": "238aff6873b03c091b51f4698a11e161",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
     "Plugin internal-data-bridge": {
-      "resolve": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
+      "resolve": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
       "id": "Plugin internal-data-bridge",
       "name": "internal-data-bridge",
       "version": "1.0.0",
@@ -104,7 +95,7 @@
       ],
       "browserAPIs": [],
       "ssrAPIs": [],
-      "pluginFilepath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
+      "pluginFilepath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/node_modules/gatsby/dist/internal-plugins/internal-data-bridge",
       "packageJson": {
         "name": "internal-data-bridge",
         "description": "An internal Gatsby plugin which creates data nodes from internal data",
@@ -121,13 +112,13 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "19e7b61c473e82d7e3aa567f0b4759a2",
+        "contentDigest": "ba19f716768860ac6776044864b8e7b8",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
     "Plugin prod-404": {
-      "resolve": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/node_modules/gatsby/dist/internal-plugins/prod-404",
+      "resolve": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/node_modules/gatsby/dist/internal-plugins/prod-404",
       "id": "Plugin prod-404",
       "name": "prod-404",
       "version": "1.0.0",
@@ -139,7 +130,7 @@
       ],
       "browserAPIs": [],
       "ssrAPIs": [],
-      "pluginFilepath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/node_modules/gatsby/dist/internal-plugins/prod-404",
+      "pluginFilepath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/node_modules/gatsby/dist/internal-plugins/prod-404",
       "packageJson": {
         "name": "prod-404",
         "description": "Internal plugin to detect various flavors of 404 pages and ensure there's a 404.html path created as well to ensure compatability with static hosts",
@@ -156,13 +147,13 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "c4d51aaa4eadbfafc588a5021912070a",
+        "contentDigest": "2508907308ba22b9c18b49ca46cab5d6",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
     "Plugin query-runner": {
-      "resolve": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/node_modules/gatsby/dist/internal-plugins/query-runner",
+      "resolve": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/node_modules/gatsby/dist/internal-plugins/query-runner",
       "id": "Plugin query-runner",
       "name": "query-runner",
       "version": "1.0.0",
@@ -174,7 +165,7 @@
       ],
       "browserAPIs": [],
       "ssrAPIs": [],
-      "pluginFilepath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/node_modules/gatsby/dist/internal-plugins/query-runner",
+      "pluginFilepath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/node_modules/gatsby/dist/internal-plugins/query-runner",
       "packageJson": {
         "name": "query-runner",
         "description": "Internal plugin for running queries",
@@ -191,28 +182,102 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "cbd6cecddb02ec125ba4434200b23981",
+        "contentDigest": "27647a43376ebbbc9750a11c253d0411",
+        "type": "SitePlugin",
+        "owner": "internal-data-bridge"
+      }
+    },
+    "Plugin gatsby-plugin-styled-components": {
+      "resolve": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/node_modules/gatsby-plugin-styled-components",
+      "id": "Plugin gatsby-plugin-styled-components",
+      "name": "gatsby-plugin-styled-components",
+      "version": "3.0.0",
+      "pluginOptions": {
+        "plugins": []
+      },
+      "nodeAPIs": [
+        "onCreateBabelConfig"
+      ],
+      "browserAPIs": [],
+      "ssrAPIs": [
+        "wrapRootElement",
+        "onRenderBody"
+      ],
+      "pluginFilepath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/node_modules/gatsby-plugin-styled-components",
+      "packageJson": {
+        "name": "gatsby-plugin-styled-components",
+        "description": "Gatsby plugin to add support for styled components",
+        "version": "3.0.0",
+        "main": "index.js",
+        "keywords": [
+          "gatsby",
+          "gatsby-plugin",
+          "styled-components"
+        ],
+        "author": "Guten Ye <ywzhaifei@gmail.com>",
+        "license": "MIT",
+        "dependencies": [
+          {
+            "name": "@babel/runtime",
+            "version": "^7.0.0"
+          }
+        ],
+        "devDependencies": [
+          {
+            "name": "@babel/cli",
+            "version": "^7.0.0"
+          },
+          {
+            "name": "@babel/core",
+            "version": "^7.0.0"
+          }
+        ],
+        "peerDependencies": [
+          {
+            "name": "babel-plugin-styled-components",
+            "version": ">1.5.0"
+          },
+          {
+            "name": "gatsby",
+            "version": ">2.0.0-alpha"
+          },
+          {
+            "name": "styled-components",
+            "version": ">= 2.0.0"
+          }
+        ],
+        "optionalDependecies": [],
+        "bundledDependecies": []
+      },
+      "parent": "SOURCE",
+      "children": [],
+      "internal": {
+        "contentDigest": "d7e280c2916c555e6b7d471759c9fda8",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
     "Plugin default-site-plugin": {
-      "resolve": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan",
+      "resolve": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume",
       "id": "Plugin default-site-plugin",
       "name": "default-site-plugin",
-      "version": "d41d8cd98f00b204e9800998ecf8427e",
+      "version": "e2e8661b0eb68ff538ff4e3b85406aec",
       "pluginOptions": {
         "plugins": []
       },
       "nodeAPIs": [],
       "browserAPIs": [],
       "ssrAPIs": [],
-      "pluginFilepath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan",
+      "pluginFilepath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume",
       "packageJson": {
         "name": "gatsby-starter-hello-world",
         "description": "Gatsby hello world starter",
         "license": "MIT",
         "dependencies": [
+          {
+            "name": "babel-plugin-styled-components",
+            "version": "^1.7.1"
+          },
           {
             "name": "bootstrap-css-only",
             "version": "^4.1.1"
@@ -220,6 +285,10 @@
           {
             "name": "gatsby",
             "version": "next"
+          },
+          {
+            "name": "gatsby-plugin-styled-components",
+            "version": "^3.0.0"
           },
           {
             "name": "react",
@@ -235,7 +304,7 @@
           },
           {
             "name": "styled-components",
-            "version": "^3.4.5"
+            "version": "^3.4.9"
           }
         ],
         "devDependencies": [],
@@ -246,19 +315,19 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "03c837d481a5be0c61f366863b6391e7",
+        "contentDigest": "89a0732f6def1e27533216000f34ecda",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
     "Plugin gatsby-plugin-page-creator": {
-      "resolve": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/node_modules/gatsby-plugin-page-creator",
+      "resolve": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/node_modules/gatsby-plugin-page-creator",
       "id": "Plugin gatsby-plugin-page-creator",
       "name": "gatsby-plugin-page-creator",
       "version": "2.0.0-rc.1",
       "pluginOptions": {
         "plugins": [],
-        "path": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/src/pages",
+        "path": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/src/pages",
         "pathCheck": false
       },
       "nodeAPIs": [
@@ -266,7 +335,7 @@
       ],
       "browserAPIs": [],
       "ssrAPIs": [],
-      "pluginFilepath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/node_modules/gatsby-plugin-page-creator",
+      "pluginFilepath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/node_modules/gatsby-plugin-page-creator",
       "packageJson": {
         "name": "gatsby-plugin-page-creator",
         "description": "Gatsby plugin that automatically creates pages from React components in specified directories",
@@ -276,10 +345,7 @@
           "gatsby",
           "gatsby-plugin"
         ],
-        "author": {
-          "name": "Kyle Mathews",
-          "email": "mathews.kyle@gmail.com"
-        },
+        "author": "Kyle Mathews <mathews.kyle@gmail.com>",
         "license": "MIT",
         "dependencies": [
           {
@@ -341,23 +407,21 @@
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "b3311dfb04905d454fb8394763c43eed",
+        "contentDigest": "0927f742ee5164ea26ccd9afeb55a5e6",
         "type": "SitePlugin",
         "owner": "internal-data-bridge"
       }
     },
     "Site": {
       "siteMetadata": {},
-      "port": "8000",
-      "host": "localhost",
       "pathPrefix": "",
       "polyfill": true,
-      "buildTime": "2018-09-10T03:47:29.855Z",
+      "buildTime": "2018-09-21T04:15:10.170Z",
       "id": "Site",
       "parent": "SOURCE",
       "children": [],
       "internal": {
-        "contentDigest": "05166a48f56d85a9b78bf31f119fa8c3",
+        "contentDigest": "37617a242a3c4922c7eb280f301c0316",
         "type": "Site",
         "owner": "internal-data-bridge"
       }
@@ -366,18 +430,18 @@
       "jsonName": "index",
       "internalComponentName": "ComponentIndex",
       "path": "/",
-      "component": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/src/pages/index.js",
+      "component": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/src/pages/index.js",
       "componentChunkName": "component---src-pages-index-js",
       "context": {},
       "pluginCreator___NODE": "Plugin gatsby-plugin-page-creator",
       "pluginCreatorId": "Plugin gatsby-plugin-page-creator",
-      "componentPath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/src/pages/index.js",
+      "componentPath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/src/pages/index.js",
       "id": "SitePage /",
       "parent": "SOURCE",
       "children": [],
       "internal": {
         "type": "SitePage",
-        "contentDigest": "bdd5b1f8c8a3af04d7f462330649aa94",
+        "contentDigest": "8558ac51d988f0a7f35b1aa682c7fdcb",
         "description": "Plugin gatsby-plugin-page-creator",
         "owner": "internal-data-bridge"
       }
@@ -385,7 +449,7 @@
   },
   "status": {
     "plugins": {},
-    "PLUGINS_HASH": "f09a793167babafbf5c4df9979e24e51"
+    "PLUGINS_HASH": "9e9d9bba116eec9c4d8bdcaf441aa1ee"
   },
   "componentDataDependencies": {
     "nodes": {},
@@ -393,18 +457,12 @@
   },
   "jsonDataPaths": {
     "dev-404-page-5f9": "920/path---dev-404-page-5-f-9-fab-NZuapzHg3X9TaN1iIixfv1W23E",
-    "components-layout-f47": "381/path---components-layout-f-47-41c-NZuapzHg3X9TaN1iIixfv1W23E",
-    "index": "173/path---index-6a9-NZuapzHg3X9TaN1iIixfv1W23E",
-    "components-layout-d7a": "373/path---components-layout-d-7-a-b7e-NZuapzHg3X9TaN1iIixfv1W23E"
+    "index": "173/path---index-6a9-NZuapzHg3X9TaN1iIixfv1W23E"
   },
   "components": {
-    "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/.cache/dev-404-page.js": {
+    "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/src/pages/index.js": {
       "query": "",
-      "componentPath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/.cache/dev-404-page.js"
-    },
-    "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/src/pages/index.js": {
-      "query": "",
-      "componentPath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahan/src/pages/index.js"
+      "componentPath": "/Users/woodshiro/Documents/Development/Schoolwork/Web App Development/McMahanHW1Resume/src/pages/index.js"
     }
   },
   "staticQueryComponents": {}

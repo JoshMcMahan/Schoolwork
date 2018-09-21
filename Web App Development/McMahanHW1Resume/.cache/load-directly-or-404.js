@@ -10,17 +10,9 @@
  * 4. If the fetch failed (generally meaning we're offline), then navigate anyways to show
  * either the browser's offline page or whatever the server error is.
  */
-export default function(resources, path, replaceOnSuccess = false) {
-  return new Promise((resolve, reject) => {
+export default function(resources, path) {
+  return new Promise(resolve => {
     const url = new URL(window.location.origin + path)
-
-    if (url.search.match(/\?(.*&)?no-cache=1(&|$)/)) {
-      console.log(
-        `Found no-cache=1 while attempting to load a page directly; ` +
-          `this is likely due to a bug in Gatsby, or a misconfiguration in your project.`
-      )
-      return reject()
-    }
 
     // Append the appropriate query to the URL.
     if (url.search) {
@@ -40,11 +32,7 @@ export default function(resources, path, replaceOnSuccess = false) {
             // Redirect there if there isn't a 404. If a different HTTP
             // error occurs, the appropriate error message will be
             // displayed after loading the page directly.
-            if (replaceOnSuccess) {
-              window.location.replace(url)
-            } else {
-              window.location = url
-            }
+            window.location.replace(url)
           } else {
             // If a 404 occurs, show the custom 404 page.
             resolve()

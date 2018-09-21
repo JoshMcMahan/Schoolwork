@@ -4,18 +4,17 @@
 }
 
 body {
-    background-color:lightblue;
+    background-color: grey;
     margin: 10px;
 }
 
 footer {
-    background-color: pink;
+    background-color: grey;
     text-align: center;
 }
 
 h1 {
     font-size: 2.5em;
-
     margin: 0px;
 }
  h2 {

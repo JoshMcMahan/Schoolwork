@@ -1,0 +1,8 @@
+﻿/*changes the font weight of the lables*/
+.lbFontWeight {
+    font-weight: 700;
+}
+/*alings the text in the validators to be centered with the text boxes*/
+.alignValidator {
+    line-height: 2em;
+}

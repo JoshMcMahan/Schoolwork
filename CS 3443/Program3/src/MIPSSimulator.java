@@ -369,7 +369,6 @@ public class MIPSSimulator {
                 if (general_Registers[2] == 1) {
                     System.out.println(general_Registers[4]);
                 } else if (general_Registers[2] == 4) {
-                    //register 4 points to the string
                     int address = general_Registers[4];
                     while (true) {
                         int temp = main_Memory[address / 4];
@@ -381,8 +380,6 @@ public class MIPSSimulator {
                         address++;
                         System.out.print((char) temp);
                     }
-
-
                 } else if (general_Registers[2] == 11) {
                     System.out.print((char) general_Registers[4]);
                 } else if (general_Registers[2] == 5) {

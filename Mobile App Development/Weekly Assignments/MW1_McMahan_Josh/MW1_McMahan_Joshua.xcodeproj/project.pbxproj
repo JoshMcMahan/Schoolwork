@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C56129C8216AB5D300FF727A /* LapTimesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56129C7216AB5D300FF727A /* LapTimesTableViewController.swift */; };
+		C59C5EA1216D855100EF527D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59C5EA0216D855100EF527D /* Helper.swift */; };
 		F8B69557215EDEB90068FBFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B69556215EDEB90068FBFD /* AppDelegate.swift */; };
 		F8B69559215EDEB90068FBFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B69558215EDEB90068FBFD /* ViewController.swift */; };
 		F8B6955C215EDEB90068FBFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8B6955A215EDEB90068FBFD /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C56129C7216AB5D300FF727A /* LapTimesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapTimesTableViewController.swift; sourceTree = "<group>"; };
+		C59C5EA0216D855100EF527D /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		F8B69553215EDEB90068FBFD /* MW1_McMahan_Joshua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MW1_McMahan_Joshua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B69556215EDEB90068FBFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8B69558215EDEB90068FBFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 				F8B6955D215EDEBB0068FBFD /* Assets.xcassets */,
 				F8B6955F215EDEBB0068FBFD /* LaunchScreen.storyboard */,
 				F8B69562215EDEBB0068FBFD /* Info.plist */,
+				C56129C7216AB5D300FF727A /* LapTimesTableViewController.swift */,
+				C59C5EA0216D855100EF527D /* Helper.swift */,
 			);
 			path = MW1_McMahan_Joshua;
 			sourceTree = "<group>";
@@ -257,7 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B69559215EDEB90068FBFD /* ViewController.swift in Sources */,
+				C56129C8216AB5D300FF727A /* LapTimesTableViewController.swift in Sources */,
 				F8B69557215EDEB90068FBFD /* AppDelegate.swift in Sources */,
+				C59C5EA1216D855100EF527D /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

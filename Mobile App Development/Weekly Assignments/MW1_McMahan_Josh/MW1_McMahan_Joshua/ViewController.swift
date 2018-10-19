@@ -86,7 +86,7 @@ class ViewController: UIViewController {
         
     }
     
-    
+    //reset all time lables and laps
     @objc func resetAll(){
         userLap = 0
         userLapTimer = 0

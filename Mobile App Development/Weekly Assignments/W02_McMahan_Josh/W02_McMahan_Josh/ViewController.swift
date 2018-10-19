@@ -21,13 +21,14 @@ class ViewController: UIViewController {
     var totalPressed:[Int] = []
     var total = 0
     
+    //handles keypad functions
     @IBAction func keyPad(_ sender: UIButton) {
         let numPressed:Int = Int(sender.titleLabel!.text!)!
         totalPressed.append(numPressed)
         recalculateTotal()
     }
     
-    
+    //handles undo button functions
     @IBAction func handleUndo(_ sender: UIButton) {
         if totalPressed.count > 0 {
             totalPressed.removeLast()
@@ -35,11 +36,13 @@ class ViewController: UIViewController {
         }
     }
     
+    //handles the clear button
     @IBAction func handleClear(_ sender: UIButton) {
         totalPressed.removeAll()
         recalculateTotal()
     }
     
+    //handles the recalcultation
     func recalculateTotal() {
         total = totalPressed.reduce(0, +)
         numDisplay.text = String(total)

@@ -70,16 +70,16 @@
 		C5E5D504214CA7560085194A /* W04_McMahan_Josh */ = {
 			isa = PBXGroup;
 			children = (
+				C5E5D505214CA7560085194A /* AppDelegate.swift */,
+				C5E5D507214CA7560085194A /* ViewController.swift */,
+				C5E5D509214CA7560085194A /* Main.storyboard */,
+				C5E5D50C214CA7560085194A /* Assets.xcassets */,
 				C5E5D531214CE7400085194A /* PinchButton.png */,
 				C5E5D52F214CE7400085194A /* SwipeLeft.png */,
 				C5E5D532214CE7400085194A /* SwipeRight.png */,
 				C5E5D530214CE7400085194A /* TapButton.png */,
 				C5E5D52B214CBE2E0085194A /* close.jpg */,
 				C5E5D527214CB0CC0085194A /* mtn.png */,
-				C5E5D505214CA7560085194A /* AppDelegate.swift */,
-				C5E5D507214CA7560085194A /* ViewController.swift */,
-				C5E5D509214CA7560085194A /* Main.storyboard */,
-				C5E5D50C214CA7560085194A /* Assets.xcassets */,
 				C5E5D50E214CA7560085194A /* LaunchScreen.storyboard */,
 				C5E5D511214CA7560085194A /* Info.plist */,
 				C5E5D529214CB3EC0085194A /* gameViewController.swift */,

@@ -5,6 +5,7 @@ using UnityEngine;
 public class onHit : MonoBehaviour
 {
     private AudioSource screamAudio;
+    private int numberOfHits = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,11 @@ public class onHit : MonoBehaviour
     // when collision is detected play audio 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        screamAudio.Play();
+        if (collision.gameObject.tag == "undertale" && numberOfHits <1)
+        {
+            screamAudio.Play();
+
+        }
+        numberOfHits++;
     }
 }

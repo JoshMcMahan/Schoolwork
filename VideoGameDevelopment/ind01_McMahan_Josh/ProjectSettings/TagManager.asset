@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - undertale
   layers:
   - Default
   - TransparentFX
@@ -46,4 +47,7 @@ TagManager:
     locked: 0
   - name: foreground
     uniqueID: 3182411297
+    locked: 0
+  - name: ground
+    uniqueID: 395326537
     locked: 0

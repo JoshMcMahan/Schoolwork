@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1205905998192897551
+--- !u!1 &3279870112358265091
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1205905998192897544}
-  - component: {fileID: 1205905998192897545}
-  - component: {fileID: 1205905998192897550}
-  - component: {fileID: 1205905998192897547}
+  - component: {fileID: 1620860199736800631}
+  - component: {fileID: 2119217325871927977}
+  - component: {fileID: 7203113772576412171}
+  - component: {fileID: 2436775092595294912}
   m_Layer: 0
-  m_Name: snowguy_0
+  m_Name: tychus_0
   m_TagString: undertale
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1205905998192897544
+--- !u!4 &1620860199736800631
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205905998192897551}
+  m_GameObject: {fileID: 3279870112358265091}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.56, y: -3, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: -3.79, y: -1.19, z: 0}
+  m_LocalScale: {x: 0.78343, y: 0.78343, z: 0.78343}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1205905998192897545
+--- !u!212 &2119217325871927977
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205905998192897551}
+  m_GameObject: {fileID: 3279870112358265091}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -70,24 +70,24 @@ SpriteRenderer:
   m_SortingLayerID: -1112555999
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6b2c1edacd2ff4f7bb8139817d4d28c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59834bb60c7d24dae8c68745c8a00188, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.3, y: 3}
+  m_Size: {x: 2.66, y: 3.02}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1205905998192897550
+--- !u!58 &7203113772576412171
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205905998192897551}
+  m_GameObject: {fileID: 3279870112358265091}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -97,13 +97,13 @@ CircleCollider2D:
   m_Offset: {x: -0.10423803, y: 0.16678047}
   serializedVersion: 2
   m_Radius: 1.187285
---- !u!82 &1205905998192897547
+--- !u!82 &2436775092595294912
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205905998192897551}
+  m_GameObject: {fileID: 3279870112358265091}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7774224657038472574}
   - component: {fileID: 1070467703046733456}
   - component: {fileID: 6509192632948278648}
-  - component: {fileID: 7506641469584886807}
   - component: {fileID: 5572366921411459601}
   m_Layer: 0
   m_Name: Cannonball
@@ -217,19 +216,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7506641469584886807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7774224657038472517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d251bfe0c4437440290bacf8efd4a5a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cannonball: {fileID: 0}
 --- !u!114 &5572366921411459601
 MonoBehaviour:
   m_ObjectHideFlags: 0

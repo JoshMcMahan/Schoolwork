@@ -19,17 +19,19 @@ public class countdownScript : MonoBehaviour
 
     private void Update()
     {
-        if(timer >= 0.0f && canCount){
+        if((uiText != null) && (timer >= 0.0f && canCount))
+        {
             timer -= Time.deltaTime;
             uiText.text = timer.ToString("F");
         }
 
-        else if(timer <= 0.0f && !doOnce)
+        else if((uiText != null) && (timer <= 0.0f && !doOnce))
         {
             canCount = false;
             doOnce = true;
             uiText.text = "0.00";
             timer = 0.0f;
+
         }
     }
 

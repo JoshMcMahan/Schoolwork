@@ -50,7 +50,7 @@ class Body extends React.PureComponent {
               I am current attending Oklahoma State University seeking a
               bacholers degree in Computer Science. I am in my senior year and
               plan to gradute in May of 2019. Once I gradute I wish to work as a
-              software developer. I have a pation for technology and will
+              software developer. I have a passion for technology and will
               continue to challenging myself while learning new and better ways
               to code.
             </p>
